@@ -1,21 +1,168 @@
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" formControlName="email" class="form-control" [ngClass]="{'is-invalid': submitted && f.email.errors}">
-        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-            <div *ngIf="f.email.errors.required">Email is required</div>
+<section id="login" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_login">
+          <div class="card">
+            <div class="card-body text-center">
+              <div class="card">
+                <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">Login</button>
+                  </div>
+                  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="form-group">
-        <label for="password">password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.password.errors}">
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+  </div>
+</section>
+<section id="login" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_login">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Sign in</strong>
+              </h5>
+              <!-- Default form login -->
+              <form class="text-center border border-light p-5" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <!-- Email -->
+                <div class="md-form">
+                  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" type="text" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+                  <div *ngIf="submitted && f.email.errors" class="alert alert-danger" role="alert">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                  </div>
+                </div>
+                <!-- Password -->
+                <div class="md-form">
+                  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+                  <div *ngIf="submitted && f.password.errors" class="alert alert-danger" role="alert">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around">
+                  <div>
+                    <!-- Remember me -->
+                    <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+                  </div>
+                  <div>
+                    <!-- Forgot password -->
+                    <a href="">Forgot password?</a>
+                  </div>
+                </div>
+                <!-- Sign in button -->
+                <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+                <!-- Register -->
+                <p>Not a member?
+                  <a href="">Register</a>
+                </p>
+                <!-- Social login -->
+                <p>or sign in with:</p>
+                <a type="button" class="light-blue-text mx-2">
+                  <mdb-icon fab icon="facebook"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                  <mdb-icon fab icon="twitter"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                  <mdb-icon fab icon="linkedin"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                  <mdb-icon fab icon="github"></mdb-icon>
+                </a>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Login</button>
+  </div>
+</section>
+<!-- Default form login -->
+<section id="login" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_login">
+          <div class="card">
+            <div class="card-body text-center">
+              <div class="card">
+                <h5 class="card-header info-color white-text text-center py-4">
+                  <strong>Sign in</strong>
+                </h5>
+                <!--Card content-->
+                <div class="card-body px-lg-5 pt-0">
+                  <!-- Form -->
+                  <form class="text-center" style="color: #757575;">
+                    <!-- Email -->
+                    <div class="md-form">
+                      <input type="email" id="materialLoginFormEmail" class="form-control">
+                      <label for="materialLoginFormEmail">E-mail</label>
+                    </div>
+                    <!-- Password -->
+                    <div class="md-form">
+                      <input type="password" id="materialLoginFormPassword" class="form-control">
+                      <label for="materialLoginFormPassword">Password</label>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <div>
+                        <!-- Remember me -->
+                        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+                      </div>
+                      <div>
+                        <!-- Forgot password -->
+                        <a href="">Forgot password?</a>
+                      </div>
+                    </div>
+                    <!-- Sign in button -->
+                    <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+                    <!-- Register -->
+                    <p>Not a member?
+                      <a href="">Register</a>
+                    </p>
+                    <!-- Social login -->
+                    <p>or sign in with:</p>
+                    <a type="button" class="light-blue-text mx-2">
+                      <mdb-icon fab icon="facebook"></mdb-icon>
+                    </a>
+                    <a type="button" class="light-blue-text mx-2">
+                      <mdb-icon fab icon="twitter"></mdb-icon>
+                    </a>
+                    <a type="button" class="light-blue-text mx-2">
+                      <mdb-icon fab icon="linkedin"></mdb-icon>
+                    </a>
+                    <a type="button" class="light-blue-text mx-2">
+                      <mdb-icon fab icon="github"></mdb-icon>
+                    </a>
+                  </form>
+                  <!-- Form -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-</form>
+  </div>
+</section>

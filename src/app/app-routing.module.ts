@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 // ruta:componente que atiende esa ruta
 const routes: Routes = [
+  // { path: '', component:LoginComponent },
   { path: 'login',component:LoginComponent },
   { path: 'playlists', component:PlaylistListComponent }
 ];
